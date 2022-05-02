@@ -23,3 +23,12 @@ void printVector(std::vector<T> v) {
 		std::cout << i << std::endl;
 	}
 }
+
+std::string leftPadding(std::string s, const int width) {
+	int padding = width - s.size();
+	std::string paddedString = s;
+	for (int i = 0; i < padding; i++) {
+		paddedString += " ";
+	}
+	return paddedString;
+}

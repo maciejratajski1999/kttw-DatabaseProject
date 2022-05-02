@@ -1,12 +1,15 @@
 // DatabaseProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
 #include <iostream>
-#include "file_manager.cpp"
+#include "FileManager.cpp"
+#include "DatabaseReader.cpp"
 
 int main()
 {
-    std::vector<std::string> split = splitString("test,string", ',');
-    printVector(split);
+
+    DatabaseReader d;
+    std::vector<std::string> data = d.getData("database.csv");
+    printVector(data);
     return 0;
 }
 
