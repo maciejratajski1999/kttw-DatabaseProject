@@ -1,20 +1,25 @@
 #include<iostream>
 #include<string>
-#include"DatabaseReader.h"
 #include<fstream>
 #include<sstream>
 #include<vector>
+#include"DatabaseReader.h"
 
-std::stringstream DatabaseReader::readDatabase(std::string fileName) {
-	std::ifstream file(fileName);
+DatabaseReader::DatabaseReader(std::string filename){
+	this->filename = filename;
+}
+
+
+std::stringstream DatabaseReader::readDatabase() {
+	std::ifstream file(this->filename);
 	std::stringstream buffer;
 	buffer << file.rdbuf();
 	file.close();
 	return buffer;
 }
 
-std::vector<std::string> DatabaseReader::getData(std::string filename) {
-	std::stringstream buffer = readDatabase(filename);
+std::vector<std::string> DatabaseReader::getData() {
+	std::stringstream buffer = readDatabase();
 	std::vector<std::string> data;
 	std::string tempLine;
 	while (std::getline(buffer, tempLine)) {
@@ -22,4 +27,35 @@ std::vector<std::string> DatabaseReader::getData(std::string filename) {
 	}
 
 	return data;
+}
+int DatabaseReader::getMaxID() {
+	std::vector<std::string> data = this->getData();
+	int last = std::stoi( data.back().substr(0, 1));
+	return last;
+}
+
+void DatabaseReader::writeDatabase(std::string data) {
+	std::ofstream WriteDatabaseFile(this->filename);
+	WriteDatabaseFile << data;
+	WriteDatabaseFile.close();
+}
+
+void DatabaseReader::addLine(std::string line) {
+	std::stringstream buffer = this->readDatabase();
+	std::string string;
+	std::string tempLine;
+	while (std::getline(buffer, tempLine)) {
+		string = string + tempLine + "\n";
+	}
+	string = string + line;
+	this->writeDatabase(string);
+}
+
+void DatabaseReader::addStudent(Student student) {
+	int id = this->getMaxID() + 1;
+	std::string stringID = std::to_string(id);
+	std::string string = student.toString();
+	string = stringID + "," + string;
+
+	this->addLine(string);
 }

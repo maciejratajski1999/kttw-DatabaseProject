@@ -1,7 +1,15 @@
 #pragma once
+#include"Student.cpp"
+
 class DatabaseReader {
 private:
-	std::stringstream readDatabase(std::string filename);
+	std::string filename;
+	int getMaxID();
+	std::stringstream readDatabase();
+	void writeDatabase(std::string data);
+	void addLine(std::string line);
 public:
-	std::vector<std::string> getData(std::string filename);
+	DatabaseReader(std::string filename);
+	std::vector<std::string> getData();
+	void addStudent(Student student);
 };
