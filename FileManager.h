@@ -6,6 +6,7 @@
 #define DATABASEPROJECT_FILEMANAGER_H
 #include<string>
 #include<vector>
+#include <iostream>
 
 std::vector<std::string> splitString(std::string str, char separator);
 template<typename T>

@@ -6,14 +6,15 @@
 int main()
 {
 
-//    DatabaseReader d("database.csv");
-//    std::vector<std::string> data = d.getData();
-//    printVector(data);
+    DatabaseReader d("database.csv");
+    std::vector<std::string> data = d.getData();
+    printVector(data);
 
-    Student tomek = Student("Tomek", "Atomek", 123457, "123457@student.pwr.edu.pl");
-    std::cout << (tomek.toString()) << std::endl;
-//    d.addStudent(tomek);
-//    printVector(d.getData());
+    Student tomek = Student("Antek", "Majtek", 82223, "82223@student.pwr.edu.pl");
+    d.addStudent(tomek);
+    std::cout << std::endl;
+    printVector(d.getData());
+
     system("pause");
     return 0;
 }
