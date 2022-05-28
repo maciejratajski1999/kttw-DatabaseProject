@@ -1,6 +1,5 @@
-#include<string>
-#include<vector>
 #include<iostream>
+#include "FileManager.h"
 std::vector<std::string> splitString(std::string str, char separator) {
 	std::vector<std::string> split;
 	std::string temp = "";
@@ -15,13 +14,6 @@ std::vector<std::string> splitString(std::string str, char separator) {
 	}
 	split.push_back(temp);
 	return split;
-}
-
-template<typename T>
-void printVector(std::vector<T> v) {
-	for (auto& i : v) {
-		std::cout << i << std::endl;
-	}
 }
 
 std::string leftPadding(std::string s, const int width) {
