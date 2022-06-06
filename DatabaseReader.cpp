@@ -31,9 +31,7 @@ std::vector<std::string> DatabaseReader::getData() {
 int DatabaseReader::getMaxID() {
 	std::vector<std::string> data = this->getData();
     int last;
-
     if (data.size() > 0){
-        std::cout << data.size() <<std::endl;
         last = std::stoi( data.back().substr(0, 1));
     }
 	else {
@@ -64,7 +62,5 @@ void DatabaseReader::addStudent(Student student) {
 	std::string stringID = std::to_string(id);
 	std::string string = student.toString();
 	string = stringID + "," + string;
-    std::cout << string << std::endl;
-
 	this->addLine(string);
 }
