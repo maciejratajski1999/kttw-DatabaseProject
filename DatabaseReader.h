@@ -1,5 +1,5 @@
 #pragma once
-#include"Student.h"
+#include"Model.h"
 
 class DatabaseReader {
 private:
@@ -11,5 +11,5 @@ private:
 public:
 	DatabaseReader(std::string filename);
 	std::vector<std::string> getData();
-	void addStudent(Student student);
+	void addModel(Model model);
 };

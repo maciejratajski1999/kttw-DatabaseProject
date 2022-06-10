@@ -2,6 +2,7 @@
 #include <iostream>
 #include "FileManager.h"
 #include "DatabaseReader.h"
+#include "Student.h"
 
 int main()
 {
@@ -11,7 +12,7 @@ int main()
     printVector(data);
 
     Student tomek = Student("Antek", "Majtek", 82223, "82223@student.pwr.edu.pl");
-    d.addStudent(tomek);
+    d.addModel(tomek);
     std::cout << std::endl;
     printVector(d.getData());
 

@@ -57,10 +57,10 @@ void DatabaseReader::addLine(std::string line) {
 	this->writeDatabase(string);
 }
 
-void DatabaseReader::addStudent(Student student) {
-	int id = this->getMaxID() + 1;
+void DatabaseReader::addModel(Model model) {
+    int id = this->getMaxID() + 1;
 	std::string stringID = std::to_string(id);
-	std::string string = student.toString();
+	std::string string = model.toString();
 	string = stringID + "," + string;
 	this->addLine(string);
 }

@@ -4,23 +4,7 @@ Student::Student(std::string firstName, std::string lastName, int indexNumber, s
 	this->lastName = lastName;
 	this->indexNumber = indexNumber;
 	this->email = email;
+    this->fields = {this->firstName, this->lastName, std::to_string(this->indexNumber), this->email};
 }
 
 
-std::vector<std::string> Student::toVector() {
-	std::vector<std::string> vector;
-	vector.push_back(firstName);
-	vector.push_back(lastName);	
-	vector.push_back(std::to_string(indexNumber));
-	vector.push_back(email);
-	return vector;
-}
-
-std::string Student::toString(){
-	std::string string;
-	for (auto& i : this->toVector()) {
-		string =  string + "," + i;
-	}
-	string.erase(0, 1);
-	return string;
-}
