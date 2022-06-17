@@ -12,4 +12,6 @@ public:
 	DatabaseReader(std::string filename);
 	std::vector<std::string> getData();
 	void addModel(Model model);
+    void removeModel(Model model);
+    std::vector<Model> getModelData(Model model);
 };

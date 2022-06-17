@@ -5,9 +5,9 @@
 #include "Model.h"
 
 std::vector<std::string> Model::toVector() {
-    std::vector<std::string> vector;
-    for (auto& i : this->fields) vector.push_back((i));
-    return vector;
+//    std::vector<std::string> vector;
+//    for (auto& i : this->fields) vector.push_back((i));
+    return this->fields;
 }
 
 std::string Model::toString(){

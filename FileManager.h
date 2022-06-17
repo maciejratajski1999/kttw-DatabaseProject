@@ -7,6 +7,7 @@
 #include<string>
 #include<vector>
 #include <iostream>
+#include "Student.h"
 
 std::vector<std::string> splitString(std::string str, char separator);
 template<typename T>
@@ -16,4 +17,5 @@ void printVector(std::vector<T> v) {
     }
 }
 std::string leftPadding(std::string s, const int width);
+std::vector<Student> readStudents(std::vector<std::string> data);
 #endif //DATABASEPROJECT_FILEMANAGER_H

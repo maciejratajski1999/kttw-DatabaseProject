@@ -7,4 +7,12 @@ Student::Student(std::string firstName, std::string lastName, int indexNumber, s
     this->fields = {this->firstName, this->lastName, std::to_string(this->indexNumber), this->email};
 }
 
+Student::Student(std::vector<std::string> fields){
+    this->fields = fields;
+    this->firstName = fields[0];
+    this->lastName = fields[1];
+    this->indexNumber = std::stoi( fields[2].substr(0, 1));
+    this->email = fields[3];
+}
+
 

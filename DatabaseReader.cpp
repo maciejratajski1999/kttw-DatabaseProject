@@ -64,3 +64,14 @@ void DatabaseReader::addModel(Model model) {
 	string = stringID + "," + string;
 	this->addLine(string);
 }
+
+void DatabaseReader::removeModel(Model model) {
+
+}
+std::vector<Model> DatabaseReader::getModelData(Model model) {
+    std::vector<Model> modelData;
+    for (auto& i : this->getData()){
+
+    }
+    return modelData;
+}

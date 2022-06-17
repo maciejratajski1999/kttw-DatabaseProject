@@ -1,5 +1,6 @@
 #include<iostream>
 #include "FileManager.h"
+
 std::vector<std::string> splitString(std::string str, char separator) {
 	std::vector<std::string> split;
 	std::string temp = "";
@@ -23,4 +24,14 @@ std::string leftPadding(std::string s, const int width) {
 		paddedString += " ";
 	}
 	return paddedString;
+}
+
+std::vector<Student> readStudents(std::vector<std::string> data) {
+    std::vector<Student> students;
+    for (auto& line :data){
+        std::vector<std::string> splitLine = splitString(line, ',');
+        std::vector<std::string> fields = std::vector<std::string>(splitLine.begin() + 1, splitLine.end());
+        students.push_back(Student(fields));
+    }
+    return students;
 }

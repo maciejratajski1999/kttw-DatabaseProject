@@ -10,8 +10,10 @@
 class Model {
     public:
     std::vector<std::string> fields;
-        std::vector<std::string> toVector();
-        std::string toString();
+    std::vector<std::string> toVector();
+    std::string toString();
+//    TODO:
+//    std::vector<Model> dataToModel(std::vector<std::string> data);
 };
 
 
